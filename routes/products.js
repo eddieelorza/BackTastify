@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
 });
 
 // Create a new product
-router.post('/', permission('admin'), async (req, res) => {
+router.post('/', async (req, res) => {
   const { body } = req;
   const product = await sequelize.models.products.create({
     name: body.name,
