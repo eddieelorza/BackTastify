@@ -5,7 +5,7 @@ const authenticate = require('../middlewares/authentication')
 
 router.use('/auth', require('./auth'))
 router.use('/restaurants', authenticate, require('./restaurants'))
-router.use('/products', require('./products'))
+router.use('/products', authenticate,require('./products'))
 router.use('/reservations', authenticate, require('./reservations'))
 router.use('/addresses', authenticate, require('./addresses'))
 router.use('/reviews', require('./reviews'))
