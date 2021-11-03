@@ -4,7 +4,7 @@ const sequelize = require('../db');
 const permission = require('../middlewares/permission')
 
 // Get all products
-router.get('/', permission('admin', 'client'), async (req, res) => {
+router.get('/', async (req, res) => {
   const products = await sequelize.models.products.findAndCountAll();
   return res.status(200).json({ data: products });
 });
