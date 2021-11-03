@@ -24,7 +24,7 @@ router.post('/', async (req, res) => {
 });
 
 // Update a product by id
-router.put('/:id', permission('admin'), async (req, res) => {
+router.put('/:id', async (req, res) => {
   const { body, params: { id } } = req;
   const product = await sequelize.models.products.findByPk(id);
   if (!product) {
@@ -41,7 +41,7 @@ router.put('/:id', permission('admin'), async (req, res) => {
 });
 
 // Delete a product by id
-router.delete('/:id', permission('admin'), async (req, res) => {
+router.delete('/:id', async (req, res) => {
   const { params: { id } } = req;
   const product = await sequelize.models.products.findByPk(id);
   if (!product) {
